@@ -1,0 +1,4 @@
+<resources>
+  <dimen name="view_margin">8dp</dimen>
+  <dimen name="header_text_size">16sp</dimen>
+</resources>

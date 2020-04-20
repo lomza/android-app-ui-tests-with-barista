@@ -1,0 +1,15 @@
+<resources>
+  <string name="app_name">Cucumber &amp; Barista UI tests app</string>
+  <string name="groceries_list_activity">Groceries list</string>
+  <string name="groceries_list_header">Choose an item from the list:</string>
+  <string name="groceries_list_help_url">https://listonic.com/basic-grocery-list/</string>
+  <string name="grocery_details_note_hint">Thoughts about this ingredient&#8230;</string>
+  <string name="grocery_details_note_clear">Clear</string>
+  <string name="grocery_details_note_delete_dialog_title">Are you sure?</string>
+  <string name="grocery_details_note_delete_dialog_yes">Yes</string>
+  <string name="grocery_details_note_delete_dialog_no">No</string>
+  <string name="action_help">Help</string>
+  <string name="action_add_to_favorites">Add to favorites</string>
+  <string name="action_share">Share</string>
+  <string name="action_delete">Delete</string>
+</resources>
