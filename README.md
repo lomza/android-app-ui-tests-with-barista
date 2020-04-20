@@ -1,5 +1,7 @@
 # Android app UI tests with Barista
 
+![UI tests run](https://github.com/lomza/android-app-ui-tests-with-barista/blob/master/barista_ui_tests.gif?raw=true)
+
 This is a demo Android app with some UI tests, written using Espresso & Barista libraries. The tests cover interaction with RecyclerView, Menu, EditText and Button, alert dialog and browser, as well as the check for opened activity and the content of the view.
 
 Written using Android Studio 4.1 and Gradle 4.1.0
