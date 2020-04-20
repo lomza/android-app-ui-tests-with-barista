@@ -27,6 +27,8 @@ import com.schibsted.spain.barista.interaction.BaristaClickInteractions.clickOn
 import com.schibsted.spain.barista.interaction.BaristaEditTextInteractions.writeTo
 import com.schibsted.spain.barista.interaction.BaristaListInteractions.clickListItem
 import com.schibsted.spain.barista.interaction.BaristaMenuClickInteractions.clickMenu
+import cucumber.api.java.After
+import cucumber.api.java.Before
 import cucumber.api.java.en.And
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
@@ -41,9 +43,18 @@ class GroceriesSteps {
     @get:Rule
     var activityRule = ActivityTestRule<GroceriesListActivity>(GroceriesListActivity::class.java, true, false)
 
+    @Before
+    fun setup() {
+        Intents.init()
+    }
+
+    @After
+    fun cleanup() {
+        Intents.release()
+    }
+
     @Given("The app started")
     fun the_app_started() {
-        Intents.init()
         activityRule.launchActivity(Intent())
     }
 
