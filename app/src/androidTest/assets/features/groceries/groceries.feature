@@ -1,5 +1,5 @@
 Feature: Groceries
-  Check the list of groceries and the details of a particular grocery
+  # Tests for the list of groceries and the details of a particular grocery
 
   # Groceries list contains 10 static elements
   Scenario: User should see groceries list when opened the app
@@ -12,7 +12,7 @@ Feature: Groceries
     When I press back
     Then I should exit the app
 
-  Scenario: User clicks on help action item and is navigated to Help webpage
+  Scenario: User clicks on help action item and is navigated to Help website
     Given The app started
     And I see Groceries list screen
     When I click on question mark action item

@@ -60,16 +60,6 @@ class GroceriesSteps {
         activityRule.launchActivity(Intent())
     }
 
-    @When("I press back")
-    fun i_press_back() {
-        // intentionally do nothing, assertion is done in the next step
-    }
-
-    @Then("I should exit the app")
-    fun i_should_exit_the_app() {
-        assertThatBackButtonClosesTheApp()
-    }
-
     @Then("I see Groceries list screen")
     fun i_see_groceries_list_screen() {
         intended(hasComponent(GroceriesListActivity::class.java.name))
@@ -78,6 +68,16 @@ class GroceriesSteps {
         assertToolbarTitle(R.id.vGroceriesListToolbar, toolbarTitle)
         assertDisplayed(R.string.groceries_list_header)
         assertRecyclerViewItemCount(R.id.vGroceriesRecyclerView, expectedItemCount = 10)
+    }
+
+    @When("I press back")
+    fun i_press_back() {
+        // intentionally do nothing, assertion is done in the next step
+    }
+
+    @Then("I should exit the app")
+    fun i_should_exit_the_app() {
+        assertThatBackButtonClosesTheApp()
     }
 
     @When("I click on question mark action item")
