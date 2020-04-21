@@ -16,6 +16,7 @@ import com.lomza.uitestsapp.GroceriesListActivity
 import com.lomza.uitestsapp.GroceryDetailsActivity
 import com.lomza.uitestsapp.R
 import com.lomza.uitestsapp.tests.assertDialogText
+import com.lomza.uitestsapp.tests.assertToastWithText
 import com.lomza.uitestsapp.tests.assertToolbarTitle
 import com.schibsted.spain.barista.assertion.BaristaAssertions.assertThatBackButtonClosesTheApp
 import com.schibsted.spain.barista.assertion.BaristaEnabledAssertions.assertEnabled
@@ -24,6 +25,7 @@ import com.schibsted.spain.barista.assertion.BaristaImageViewAssertions.assertHa
 import com.schibsted.spain.barista.assertion.BaristaRecyclerViewAssertions.assertRecyclerViewItemCount
 import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
 import com.schibsted.spain.barista.interaction.BaristaClickInteractions.clickOn
+import com.schibsted.spain.barista.interaction.BaristaDialogInteractions.clickDialogPositiveButton
 import com.schibsted.spain.barista.interaction.BaristaEditTextInteractions.writeTo
 import com.schibsted.spain.barista.interaction.BaristaListInteractions.clickListItem
 import com.schibsted.spain.barista.interaction.BaristaMenuClickInteractions.clickMenu
@@ -33,7 +35,7 @@ import cucumber.api.java.en.And
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
-import org.hamcrest.Matchers.isEmptyString
+import org.hamcrest.Matchers.*
 import org.junit.Rule
 import org.junit.runner.RunWith
 
@@ -133,7 +135,7 @@ class GroceriesSteps {
         clickOn(R.string.grocery_details_note_clear)
     }
 
-    @When("I see empty note")
+    @Then("I see empty note")
     fun i_see_empty_note() {
         onView(withId(R.id.vGroceryDetailsNoteEdit)).check(matches(withText(isEmptyString())))
     }
@@ -152,6 +154,11 @@ class GroceriesSteps {
 
     @And("I confirm the deletion")
     fun i_confirm_the_deletion() {
-        clickOn(R.string.grocery_details_note_delete_dialog_yes)
+        clickDialogPositiveButton()
+    }
+
+    @Then("I see toast with {string} text")
+    fun i_see_toast_with_text(text: String) {
+        assertToastWithText(text, view = activityRule.activity.window.decorView)
     }
 }

@@ -12,4 +12,5 @@
   <string name="action_add_to_favorites">Add to favorites</string>
   <string name="action_share">Share</string>
   <string name="action_delete">Delete</string>
+  <string name="grocery_delete_toast_text">Deleted!</string>
 </resources>

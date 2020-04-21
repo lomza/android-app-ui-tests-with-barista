@@ -18,7 +18,7 @@ class GroceryDetailsActivity : AppCompatActivity() {
             builder.apply {
                 setMessage(R.string.grocery_details_note_delete_dialog_title)
                 setPositiveButton(R.string.grocery_details_note_delete_dialog_yes) { _, _ ->
-                    Toast.makeText(activity, "Deleted!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, getString(R.string.grocery_delete_toast_text), Toast.LENGTH_SHORT).show()
                 }
                 setNegativeButton(R.string.grocery_details_note_delete_dialog_no) { _, _ -> }
             }

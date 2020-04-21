@@ -48,4 +48,5 @@ Feature: Groceries
     And I navigate to "Milk" grocery details screen
     When I click on Delete menu item
     And I see delete confirmation dialog
-    Then I confirm the deletion
+    And I confirm the deletion
+    Then I see toast with "Deleted!" text
