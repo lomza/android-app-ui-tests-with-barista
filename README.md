@@ -6,7 +6,7 @@ This is a demo Android app with some UI tests, written using Espresso & Barista 
 
 Written using Android Studio 4.1 and Gradle 4.1.0
 
-## How to run the tests?
+## How to run all tests?
 Right click on _androidTest_ package and choose **Run ‘Tests in ‘com’’** or navigate to _GroceriesSteps_ class and press on Play icon on the left of class declaration.
 
 ## How to run just some tests?
