@@ -11,10 +11,6 @@ import kotlinx.android.synthetic.main.activity_groceries_list.*
 
 class GroceriesListActivity : AppCompatActivity() {
 
-    private val groceriesList: Array<String> by lazy {
-        getGroceriesArray()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_groceries_list)
@@ -24,9 +20,8 @@ class GroceriesListActivity : AppCompatActivity() {
     }
 
     private fun setGroceriesList() {
-        val groceriesList = getGroceriesArray()
         val listManager = LinearLayoutManager(this)
-        val listAdapter = GroceriesListAdapter(groceriesList) { grocery ->
+        val listAdapter = GroceriesListAdapter(getGroceriesArray()) { grocery ->
             goToGroceryDetails(grocery)
         }
 
